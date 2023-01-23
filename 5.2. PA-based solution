@@ -1,0 +1,34 @@
+Let’s assume that the site is connected to the Internet through many carriers with every carrier delegating a PA prefix (probably by DHCP-PD).
+It is mandatory to join requirement L-13 of [HNCP] section 11 to deprecate delegated prefixes (set preferred time to zero) if the router has information about the path loss to the carrier sourced the prefix. [HNCP] is the only standard track document that requests to propagate the prefix unavailability information to the host.
+[Node Requirements] does not make DHCP mandatory for address assignment. The most popular OS does not support DHCP even for the configuration, despite it “should” according to [Node Requirements]. Hence, for the general case, we should assume that address assignment and configuration is done by [SLAAC]. The logic below would not change if DHCP is used for address assignment.
+As a result, we have a host with many IP addresses that needs to choose the source address and the next hop for any attempt of communication.
+Potentially, the application on the host may use bind() to choose the source address first using any logic pre-programmed into the application. This application-driven solution is the only current way to access the “subscriber-only services” of the particular carrier or steering traffic for cost, latency, packet loss, hop count, etc.
+After the application would choose the proper source address by bind(), it needs to choose the next hop that is leading to it.
+There are two options to accomplish it.
+[Multi-Homing] section 3.2 has an augmentation to [ND] section 6.3.6 asking to consider only default routers that advertised the particular prefix already used for the source address.
+Alternatively, it is possible to use [Route Preferences] to install the external prefix into the host's routing table.
+It may be the situation when many carriers are behind the single router on the link then it is valuable to support [Provisioning domains] to supply DNS resolvers with their relationships to prefixes from many carriers because DNS resolvers from the different carriers may not show resources of the “subscriber-only services”. For this, [Provisioning domains] is needed to be implemented at least on routers.
+The implementer should check that functionality mentioned in this paragraph is implemented on routers and applications. Unfortunately, [Provisioning domains] and [Multi-Homing] have low acceptance on the market. Hence, the application-driven solution for carrier resiliency has a low probability to be implemented.
+Let’s consider the more typical case when the application is simplified on the networking part. Then the application would use getaddrinfo() which is typically compliant with [SASA] on all OSes. This solution is called host-driven in this section.
+For historical reasons, getaddrinfo() would choose the next hop first. By default, the next hop would be chosen in a random round-robin between all available routers on the particular link (according to [ND] section 6.3.6).
+Then rule 5.5 of the [SASA] section 5 would restrict the list of available prefixes to those already advertised by the chosen default router. Hence, the random next hop would lead to the random source address from available.
+It may block the possibility to access the “subscriber-only services” of a particular carrier (traffic would be filtered from a source address belonging to a different carrier) and it prevents traffic steering by any policy.
+It may be the situation when many carriers are behind the single router on the link then theoretically it may be valuable to support [Provisioning domains] to supply DNS resolvers from both carriers with their relationships to prefixes. But practically IP stack of host OSes is not capable to accept and use this additional information – it would not play any role in the decision process explained above. Moreover, even if [Provisioning domains] would be implemented the recommendation for random next hop choice would prevent to use of it effectively.
+Anyway, simple Internet connectivity with carrier resiliency may be implemented. Carrier’s resiliency would work with unpredictable traffic distribution between carriers. It needs just rule 5.5 of the [SASA] section 5 support.
+An important reminder, that in addition to supporting rule 5.5 of [SASA] the router should support L-13 requirement of [HNCP] to deprecate respective prefixes not the default router status. It is the only effective way for convergence in the case of connectivity loss to the PA carrier.
+[MHMP] discusses that it is possible to achieve traffic steering supplying policies by two mechanisms:
+1) “Routing Information Options” of [Route Preferences] to influence next hop choice
+2) [Policy by DHCP] to modify policies in [SASA] source address selection algorithm.
+This method is considered not practical because of its complexity and DHCPv6 unavailability for the most popular OS.
+Finally, the site may have many links and routers (complex topology) then source routing is mandatory to deliver the traffic to the carrier owning the source address of the packet. It is properly discussed in [MHMP Enterprise]. Albeit, it is not useful yet because initially the delegated PA prefix should be dynamically split into smaller prefixes and propagated to all links over the site. The same protocol should help for the prefix deprecation too for the case when connectivity to the carrier is lost. It is not supported now because [HNCP] or DHCP-PD has not gained acceptance for this scenario. There is the probability that this problem would be fixed then [MHMP Enterprise] would become very important to complex sites.
+Advantages:
+-	No need for a registered address space,
+-	Preserve end-to-end communication,
+-	In simple networks may be as simple as plugging all CPE routers and client devices into the same L2 Network (I.E. Switch).
+Disadvantages:
+-	Scalability issues, simple for small networks, but significantly more difficult in complex networks,
+-	Prefix may not get deprecated when the CPE fails instead of just the link,
+-	Not all issues are resolved yet, only the simplest scenario possible (simple topology, unpredictable traffic distribution),
+-	Carrier may frequently change the prefix that may disrupt communication (flush renumbering),
+-	Sites with complex topologies are not supported yet,
+-	Traffic steering by any policies (including the capability to access a “subscriber-only services”) is not supported yet.
