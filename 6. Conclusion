@@ -1,0 +1,39 @@
+Not all requirements are possible to achieve for all solutions:
++--+--------------------------------+----+-----+---------+---------+
+|  |     Requirement                | PI | PA  | ULA+NPT | ULA+NAT |
++--+--------------------------------+----+-----+---------+---------+
+| 1| Carriers Resiliency            |  + |  +  |    +    |    +    |
+| 2| End-to-End Connectivity        |  + |  +  |   +/-   |    -    |
+| 3| Internal Connectivity          |  + |  +  |  +/-    |  +/-    |
+| 4| Convergence speed              |  + | +/- |    +    |    +    |
+| 5| Complex Topology support       |  + |  -  |  +/-    |    +    |
+| 6| Subscriber-only services       |  - |  -  |  +/-    |  +/-    |
+| 7| Traffic Steering on Router     | +/-|  -  |    +    |    +    |
+| 7| Traffic Steering on Host OS    |  - |  -  |    -    |    -    |
+| 7| Traffic Steering on Application|  - |  -  |    -    |    -    |
++--+--------------------------------+----+-----+---------+---------+
+The table above shows partial support of end-to-end connectivity for the ULA+NPT solution because it permits initiating connectivity in any direction but address references in the application layer would need special treatment like ALG or [STUN].
+Internal connectivity is marked as partial support for the reason of the complexity needed to promote ULA address space above IPv4.
+Convergence speed is partially acceptable by a PA-based solution because [HNCP] or DHCP-PD has not been adopted by the market but it is needed for prefix deprecation propagation over a complex site.
+Complex topology is partially supported by the ULA+NPT solution because it is not possible (on real products) to get bigger than /64 external prefix in the mobile environment.
+Support for the “subscriber-only services” is marked as partial because it needs a routing announcement as “Routing Information Options” of [Route Preferences] which is not widely supported.
+Traffic steering on routers is marked as partially supported for PI-based solution because of the high complexity to organize incoming traffic steering. NAT/NPT-based solutions connect ingress traffic steering to egress which makes it simple.
+Some functionality reflected in the table above may be improved but the roadmap (active IETF draft) is not available at the time of this writing.
+Theoretically, just from the technical point of view, the solutions are ordered in section 5. PI is the best, PA-based is more complex, and, NPT breaks end-to-end Internet model, and so on. Practically, the company could have non-technical requirements that override technical ones. The table above is not complete – it should be augmented by non-technical requirements that are perceived by the network owner.
+
+For many network owners, the principal ramification point may be the desire to have end-to-end connectivity because it is the big advantage of IPv6. This question may be especially important for resources that should be exposed to the Internet.
+If it is needed then PI or PA –based solutions are applicable.
+Then the acceptance of the additional challenges is needed:
+•	to get a PI prefix from RIR or LIR,
+•	to pay a premium for PI advertisements by carriers (carriers often impose different tariff plans for such an attachment circuit).
+If both challenges are acceptable then the PI-based solution is the best: simple, reliable, and scalable. The burden that the PI-based solution would create on the Internet infrastructure is probably not the concern of the small organization investigating carrier resilience.
+If at least one challenge above is not acceptable then the PA-based solution needs to be implemented with all restrictions and complexities discussed in section 5.2. For the exception when complex site support is needed in a mobile environment.
+Let’s return to our primary question about the need for end-to-end connectivity to answer it negatively.
+Then ULA+NPT solution (discussed in section 5.3) is better in many situations except the case when NAT66 is a strict non-technical requirement or the site is complex with mobile connectivity as a backup.
+
+It could be the situation when the site has a complex topology (many links and routers) then a PA-based solution is not an option yet because it would need automatic PA addresses distribution over the site but [HNCP] or DHCP-PD has not gained market acceptance for this scenario.
+Then the logic would be like the above but after the PI evaluation, the next option would be ULA+NPT.
+
+The simplicity of the PI-based solution or perceived NAT66 regulatory requirements may be the primary factor then the logic may be different.
+For different design goals, it is possible to get the rough consultancy from the table above for supported requirements.
+It is recommended to read section 5. for fine-tuning the custom prioritization graph.
