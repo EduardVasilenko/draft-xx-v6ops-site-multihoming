@@ -1,4 +1,4 @@
-# draft-xx-v6ops-site-multihoming
+# Abstract
 Carrier resilience is a typical business requirement.
 IPv4 was solving this problem by private internal site addressing in combination with separate NAT engines to redundant carriers.
 IPv6 claims support for end-to-end connectivity. Hence, NAT is the least desired option. But other IPv6 solutions for carrier resiliency have challenges.
