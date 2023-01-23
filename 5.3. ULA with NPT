@@ -1,0 +1,30 @@
+[ULA] permits to have local non-registered address space that is sufficiently random to be treated like unique global. [ULA] is global concerning the number of sites that one prefix may span. /48 prefix permits to have 64k of normal subnets (/64) which may be enough for many organizations. The bigger organizations would probably get registered GUA addresses anyway.
+There is one nuance that [ULA] address space is prioritized below GUA and IPv4 address space on the hosts according to [SASA] section 2.1. Hence, in the dual-stack environment, it is needed to modify the [SASA] policy table to insert /48 prefix with the high precedence as recommended in section 10.6 of the [SASA]. Automation for such configuration is OS-specific.
+It is not mandatory to have [ULA], registered GUA (PI Addresses) may be used too, but it is the case of low probability because PI address space is much better to route directly to carriers. However a carrier may not support this or charge significantly more.
+Network Prefix translation [NPT] is the unique IPv6 technology that permits a light version of NAT with 1:1 stateless relationship between addresses on the "inside" and "outside". A stateless algorithmic relationship permits to have asymmetric routing and easy redundancy if many gateways are implemented in the direction of one carrier.
+Like any NAT it may create a challenge for protocols that embed IP addresses (for references) at the application level. It may need to use an external [STUN] server for address translation or to monitor the session by ALG.
+Additionally, IPSec needs “NAT traversal” which is typically done by encapsulation of the original session into UDP. Application support for this with IPv6 is often poor, as a main point for adoption of IPv6 is that it is no longer required and simplifies application logic.
+There is no need for logs because translation is algorithmic.
+It is possible to initiate the session from the “outside” with the probability 2/3 when the carrier prefix is permanent (would not change after uplink re-connect) or some additional efforts are needed to dynamically update DNS. Connection initiation from any direction is considered by some engineers as a value, while others value NAT one-way connectivity that is lost for NPT.
+Other NAT problems are not present in NPT because it does not manipulate the transport layer.
+[NPT] is partially acting against [IAB request] to preserve end-to-end transparency of the Internet which is important for the Internet's future flexibility.
+Together, [ULA] and [NPT] may effectively mimic typical IPv4 carrier resilience practice: the organization could have only [ULA] inside (no GUA), and every site could have many redundant connections through the separate [NPT] engines on every gateway to carriers.
+There is a principal difference from the typical IPv4 NAT solution that [NPT] needs an equal prefix size from “inside” and “outside”. It is typically possible to get /56 or /60 from the fixed broadband carrier, but it is typically not possible to get more than /64 from the mobile carrier because DHCP is blocked on mobile modems. Hence, if the carrier is mobile then only a simplified site with one internal /64 subnet is practical.
+For fast convergence, routers should announce “default” on-site and may additionally announce some more specific prefixes if needed. Additional destination prefixes permit traffic distribution policy between carriers.
+In the case of transit internal routing hops, such announcements probably need routing.
+In the case of the link for the respective host (last hop), such an announcement is the default router status in [ND] or [Route Preferences] for the more specific routes. The last one is mandatory to access the “subscriber-only services”.
+The principal requirement is that routers should trace connectivity to carriers to deprecate “default” and more specific announcements when needed.
+Advantages:
+-	No need for official address space,
+the ULA prefix is a random self-generated,
+-	Easy to implement,
+the same practice as for the current IPv4 carrier resiliency,
+-	Possibility for traffic distribution policy between different carriers, but without the possibility to access a filtered resource (“subscriber-only services”).
+Disadvantages:
+-	Challenge to automate ULA prioritization on hosts above IPv4,
+-	NPT breaks some applications with address referrals at the application level,
+some additional solutions are needed (STUN, ALG),
+-	Session initiation from the outside is practical only for cases when the carrier prefix is stable or DNS is dynamically updated,
+-	Currently limited to one subnet per site in the mobile environment,
+-	May hinder overall IPv6 adoption,
+-	For applications similar to ULA with NAT66 (section 5.4).
