@@ -1,0 +1,28 @@
+Comments about ULA from the first paragraph of the previous section apply to this section as well. It is important not to forget to prioritize ULA above IPv4.
+It is not mandatory to have [ULA], registered GUA (PI Addresses) may be used too, but it is the case of low probability because PI address space is much better to router directly to carriers. However a carrier may not support this or charge significantly more.
+[IAB request] for not to use NAT has been heavily based on the long list of [NAT implications]. In the case of stateful NAT66, the full list of NAT problems is applicable: breaks end-to-end model, no possibility to initiate session from the outside, broken application referrals to its address, single point of failure, redundancy challenge (state replication), and performance challenge (stateful processing).
+Hence, it is easy to understand the IETF consensus for not having a stateful NAT standard for IPv6. There is no RFC for NAT66. A proprietary implementation may create interoperability challenges.
+NAT still has a list of advantages: avoids renumbering for PA address space change, historical solution for carrier resiliency, and gives some security protection. Hence, it is supported by many products. The example is [nftables NAT66].
+Another issue is the lack of UPNPv6 standardization and implementation. With IPv4 applications behind a NAT44 can dynamically request port forwarding as well as their public IP. With IPv6 this is not available and therefore provides a worse experience than with IPv4.
+For fast convergence, routers should announce “default” on-site and may additionally announce some more specific prefixes if needed. Additional destination prefixes permit traffic distribution policy between carriers.
+In the case of transit internal routing hops, such announcements probably need routing.
+In the case of the link for the respective host (last hop), such an announcement is the default router status in [ND] or [Route Preferences] for the more specific routes. The last one is mandatory to access the “subscriber-only services”.
+The principal requirement is that routers should trace connectivity to carriers to deprecate “default” and more specific announcements when needed.
+Advantages:
+-	No need for official address space,
+the ULA prefix is a random self-generated,
+-	Easy to implement,
+the same practice as for the current IPv4 carrier resiliency,
+-	NAT may be a normative requirement by itself (that is very disputable but claimed in many discussions anyway),
+-	Support for sites with complex topologies,
+-	Possibility for traffic distribution policy between different carriers, but without the possibility to access a filtered resource (“subscriber-only services”).
+Disadvantages:
+-	Challenge to automate ULA prioritization on hosts above IPv4,
+-	NAT breaks some applications with address referrals at the application level,
+some additional solutions are needed (STUN, ALG),
+-	Session initiation from the outside is blocked in practice
+(needs complex configuration),
+-	NAT needs logs for compliance and troubleshooting,
+-	Principally bigger cost because of stateful processing,
+-	May hinder overall IPv6 adoption,
+-	For applications similar to ULA with NPT (section 5.3).
