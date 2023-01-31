@@ -7,6 +7,7 @@ In the case of transit internal routing hops, such announcements probably need r
 In the case of the link for the respective host (last hop), such an announcement is the default router status in [ND] or [Route Preferences] for the more specific routes.
 The principal requirement is that routers should trace connectivity to carriers to deprecate “default” and more specific announcements when needed.
 Let’s put aside the discussion on how to load balance incoming traffic to such a site. It is possible to split the prefix into many smaller prefixes and announce them separately to different Carriers. It needs the initial prefix to be big enough because if split prefixes would be smaller than /48 then they would be filtered out of the Internet. Big companies are using it already, small companies would probably never need it. This advanced incoming traffic engineering is possible only for PI prefixes.
+A crucial advantage of using a prefix which is globally reachable through multiple Internet links is the seamless failover of transport-layer sessions across the links without having to re-establish them. Conventionally, in IPv4 environments, such a failover would have been basically guaranteed to break existing communication due to the ubiquity of PA addressing combined with NAT44, and the consequent change in source address as seen by the remote endpoint.
 The primary problem with PI addresses is that the widespread practice to use PI addresses would bloat the Internet routing table at least 10 times which would greatly impact the cost and scalability of all Internet routers. Albeit, this problem is not a concern of a company implementing a PI-based solution.
 Advantages:
 -	Preserve end-to-end communication,
@@ -14,6 +15,7 @@ Advantages:
 -	Straightforward design,
 -	Allows aggregation of multiple uplinks for increased throughput,
 -	Support sites with complex topology.
+-	Seamless link failover without transport session re-establishment
 Disadvantages:
 -	Hard to implement esp. for smaller entities as it requires knowledge of advanced routing protocols like BGP and advanced networking hardware (It is not as simple as plugging two independent CPEs into the same switch as the clients and have it work),
 -	In case of provider failure, a prefix may not be correctly deprecated from global routing and lead to complex error scenarios and downtime,
