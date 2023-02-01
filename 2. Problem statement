@@ -26,7 +26,7 @@ The approaches currently available to address local protection and, more specifi
 There are 4 potential possible solutions:
 -	Static PI address space for the site, routed by multiple carriers,
 -	Dynamic PA addresses distribution and withdrawal from carriers,
--	Static ULA address space for the site with NPTv6 translation,
+-	Static ULA address space for the site with NPT translation,
 -	Static ULA address space for the site with NAT66 translation.
 The simplest solution is to have Provider Independent (PI) addresses on-site with proper routing announcements by carriers on behalf of the client. This method does not have a significant discussion history because the solution was always stable and simple. The solution has challenges that prevent it from becoming universal and widespread. It will be discussed in section 5.1.
 A widespread approach sees an [IPv6] host have many IPv6 addresses on its link(s). These addresses may be Provider Aggregatable (PA) from different carriers. In this typical scenario, the host has the challenge of properly choosing the combination of 1) a source address that would be not filtered from the particular resource on the Internet, and 2) a next-hop that is leading to the source address owner who would not filter the packet.
