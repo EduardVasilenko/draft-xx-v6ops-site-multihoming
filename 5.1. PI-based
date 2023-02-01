@@ -16,6 +16,7 @@ Advantages:
 -	Straightforward design,
 -	Allows aggregation of multiple uplinks for increased throughput,
 -	Support sites with complex topology.
+-	Seamless link failover without transport session re-establishment
 -	Support outbound traffic steering
 Disadvantages:
 -	Hard to implement esp. for smaller entities as it requires knowledge of advanced routing protocols like BGP and advanced networking hardware (It is not as simple as plugging two independent CPEs into the same switch as the clients and have it work),
