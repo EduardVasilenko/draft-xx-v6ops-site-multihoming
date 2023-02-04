@@ -1,12 +1,12 @@
 While building or expanding an IPv6 addressing plan, it may become necessary for an organization to procure or aquire additional network resources; it is reasonably straightforward to obtain additional Provider Independent GUA address space from an RIR or LIR. However, not all organization have the in-house expertise, desire, or capability to execute such a plan.
 PI prefix permits the creation of an address plan that would never need renumbering due to the non-dynamic and non-conditional nature of the prefix allocation. Hence, the address plan may be stable enough to be manually provisioned over all routers and links even in the complex topology.
 The long-term supportability and network convergence time of this solution is excellent because there is no need for renumbering, it is just a normal routing update with default routing status withdrawal for the router that lost internet connectivity.
-It may be a more involved process to route the PI prefix by the carrier because such client attachment type is typically charged more by the carrier due to the more complicated nature of the connection and configuration (i.e. dynamic protocol configuration, iconfiguration of appropriate prefix filtering, equipment required to operate the required protocols). It generally requires a manual procedure on the carrier side, hence, it is not possible to bypass the carrier’s help.
+It may be a more involved process to route the PI prefix by the carrier because such client attachment type is typically charged more by the carrier due to the more complicated nature of the connection and configuration (i.e. dynamic protocol configuration, configuration of appropriate prefix filtering, equipment required to operate the required protocols). It generally requires a manual procedure on the carrier side, hence, it is not possible to bypass the carrier’s help.
 For fast convergence, routers should announce “default” on-site and may additionally announce some more specific prefixes if needed. Additional destination prefixes permit traffic distribution policy between carriers.
 In the case of transit internal routing hops, such announcements likely require routing of some form.
 In the case of the link for the respective host (last hop), such an announcement is the default router status in [ND] or [Route Preferences] for the more specific routes.
 The principal requirement is that routers should trace connectivity to carriers to deprecate “default” and more specific announcements when needed.
-Setting aside the discussion on how to load balance incoming traffic to such a site, it is possible to split the prefix into many smaller prefixes and announce them separately to different Carriers. This necessitates initial prefix to be of adequate size in order to dis-aggregate to no smaller than the minimum acceptible prefix lengh within the default free table of /48. This advanced incoming traffic engineering is possible only for PI prefixes.
+Setting aside the discussion on how to load balance incoming traffic to such a site, it is possible to split the prefix into many smaller prefixes and announce them separately to different Carriers. This necessitates initial prefix to be of adequate size in order to dis-aggregate to no smaller than the minimum acceptible prefix lengh within the default-free table of /48. This advanced incoming traffic engineering is possible only for PI prefixes.
 
 The primary problem with PI addresses is that the widespread practice to use PI addresses would bloat the Internet routing table at least 10 times which would greatly impact the cost and scalability of all Internet routers. Albeit, this problem is not a concern of a company implementing a PI-based solution.
 Advantages:
@@ -22,6 +22,6 @@ Disadvantages:
 -	In case of provider failure, a prefix may not be correctly deprecated from global routing and lead to complex error scenarios and downtime,
 -	Need to pay and liaise with RIR or LIR (for the PI address space),
 -	Need carriers to accept PI prefix advertisements,
-carriers typically charge significantly more for such type of attachment. Often SD-WAN contracts are required instead of business DSL contracts,
+-   Carriers typically charge significantly more for such type of attachment. Often SD-WAN contracts are required instead of business DSL contracts,
 -	Return traffic path not guaranteed to mirror the outbound path
--	Blow Internet routing table.
+-	Bloat Internet routing table.
