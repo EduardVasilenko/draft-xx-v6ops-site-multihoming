@@ -6,7 +6,7 @@ Potentially, the application on the host may use bind() to choose the source add
 After the application would choose the proper source address by bind(), it needs to choose the next hop that is leading to it.
 There are two options to accomplish this:
 1) [Multi-Homing] section 3.2 has an augmentation to [ND] section 6.3.6 asking to consider only default routers that advertised the particular prefix already used for the source address.
-2) It is possible to use [Route Preferences] to install the external prefix into the host's routing table.
+2) [Route Preferences] to install the external prefix into the host's routing table.
 It may be valuable to implement [Provisioning domains] to supply DNS resolvers with their relationships to each prefix provided by the different carriers, as others may show incorrect information for "subscriber-only services." But practically IP stack of host OSes are not capable to accept and use this additional information – it would not play any role in the decision process.
 The implementer should check that functionality mentioned in this paragraph is implemented on routers and applications. Unfortunately, [Provisioning domains] and [Multi-Homing] have low acceptance on the market. Hence, the application-driven solution for carrier resiliency has a low probability to be implemented.
 Let’s consider the more typical case when the application is simplified on the networking part. Then the application would use getaddrinfo() which is typically compliant with [SASA] on all OSes. This solution is called host-driven within this section.
