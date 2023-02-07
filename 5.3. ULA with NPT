@@ -5,9 +5,7 @@ Network Prefix translation [NPT] is the unique IPv6 technology that permits a li
 Like any NAT it may create a challenge for protocols that embed IP addresses as literals for reference at the application level. It may need to use an external [STUN] server for address translation or to monitor the session by an ALG.
 Additionally, protocols such as IPSec require “NAT traversal” which is typically done by encapsulation of the original session into UDP. Application support for this with IPv6 is often poor, as a main point for adoption of IPv6 is that it is no longer required and simplifies application logic. However, in practice this is not always the case and legacy applications may still operate using these techniques.
 There is no need for logs because translation is algorithmic.
-\\--This is unclear and needs reworded --
-It is possible to initiate an inbound session from the “outside” with the probability 2/3 when the carrier prefix is permanent (would not change after uplink re-connect) or some additional efforts are needed to dynamically update DNS. Connection initiation from any direction is considered by some engineers as a value, while others value NAT one-way connectivity that is lost for NPT.
-\\--end--
+2/3 of Carriers lease a permanent prefix to subscribers. It would not change after the uplink re-connect. Then it is possible to initiate an inbound session from the “outside”. For other carriers, some additional efforts are needed to dynamically update DNS. Connection initiation from any direction is considered by some engineers as a value, while others value NAT one-way connectivity that is lost for NPT.
 Other NAT problems are not present in NPT because it does not manipulate the transport layer.
 [NPT] is partially acting against [IAB request] to preserve end-to-end transparency of the Internet which is important for the Internet's future flexibility.
 Together, [ULA] and [NPT] may effectively mimic typical IPv4 carrier resilience practice: the organization could have only [ULA] inside (no GUA), and every site could have many redundant connections through the separate [NPT] engines on every gateway to carriers.
@@ -23,8 +21,8 @@ Advantages:
 Disadvantages:
 -	Challenge to automate ULA prioritization on hosts above IPv4,
 -	NPT breaks some applications with address referrals at the application level, some additional solutions are needed (STUN, ALG),
+-	Custom distribution policies needed for access to filtered resource (“subscriber-only services”),
 -	Session initiation from the outside is practical only for cases when the carrier prefix is stable or DNS is dynamically updated,
 -	Currently limited to one subnet per site in the mobile environment,
--	May hinder overall IPv6 adoption,
-\\ -- This is confusing, not sure what we're trying to say. 
+-	May hinder overall IPv6 adoption as IPv6 with NPT lose ent-to-end connectivity advantage,
 -	For applications similar to ULA with NAT66 (section 5.4).

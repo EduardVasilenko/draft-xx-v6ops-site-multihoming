@@ -1,13 +1,14 @@
-1.	Site resiliency to the arbitrary number of carriers.
-2.	End-to-end connectivity,
+1.	Site resiliency to an arbitrary number of carriers.
+2.	End-to-end connectivity wherever possible.
 3.	Possibility for internal communication using any prefixes distributed by local routers, irrespective of the connectivity to carriers.
-4.	Sub-second convergence on the site after the connectivity is lost to the particular carrier.
+4.	Sub-second convergence on the site after the connectivity is lost to any particular carrier.
 5.	The potential complex topology of the site with many internal on-site hops (that needs many routers and links)
 6.	Access resources on the carrier's “subscriber-only services” that is permitted only for the address space distributed by the particular carrier.
-It may need the host to check DNS resolvers from all carriers to discover the restricted resource.
-It may need to choose the source address that would be accepted by the particular carrier. 
-7.	Possibility for traffic steering between different paths (including site internal and the Internet) based on bandwidth, cost, load, latency, packet loss, hop count, etc.
-It is not a goal to develop additional perimeter security because the world is moving to “Zero Trust” where perimeter security is not as important as before, every system should assume a non-secure environment which is the case after the host’s frequent connections to the open Internet.
-Anyway, a firewall is better for perimeter security which is out of the scope of this document.
+There may exist a need for the host to check DNS resolvers from all carriers to discover the restricted resource.
+A given host may need to choose the source address that would be accepted by the particular carrier. 
+7.	Possibility for traffic steering between different paths (including site internal and the Internet) based on bandwidth, cost, load, latency, packet loss, hop count, etc. (e.g. application traffic/path engineering)
+It is out of scope for this document to develop additional perimeter security; every system should assume a non-secure environment which is the case after the host’s frequent connections to the open Internet. 
+Different environemnts have diverse security policies, needs, and requirements that may be shaped by internal policy, regulatory compliance, or national security requirements, and as such, will not be discussed in detail in this document.
 Privacy is assumed by [Temporary addressing] and put out of the carrier resiliency design consideration.
-All solutions would have different cost advantages and disadvantages. The cost may greatly vary for different geographies, market segments, and the size of the company (especially important is the presence of networking professionals in the company). The clear winner would be difficult to appoint. Hence, the cost has been put out of the analysis despite it being an important factor by itself.
+All solutions would have different cost advantages and disadvantages. The cost may greatly vary for different geographies, market segments, and the size of the organization but all should be driven by any needs and requirements set upon the organization by their respective governing bodies with input from the appropriate subject matter experts. 
+It is recognized that cost is often a determining factor in IT and networking decisions but is out of scope for this document.
