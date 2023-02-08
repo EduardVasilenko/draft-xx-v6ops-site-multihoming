@@ -1,0 +1,4 @@
+It is possible to shift the internet resiliency problem to the centralized site of the big enterprise if the branch has a redundant WAN connectivity organized in any other way (SDH/PDH/OTN links, MPLS VPNs, encrypted tunnels). It is typically much easy to arrange the resiliency over internal WAN links with the help of routing.
+Unfortunately, the disablement of "local Internet breakout" increases the latency for the users on the branch site. On the positive side, a centralized gateway to the Internet permits improved perimeter security.
+Shifting the problem to a different place is not a solution because the other site would be challenged in the same. It would have the same options for multihoming discussed in sections 5.1-5.4.
+Enterprise WAN design by itself is out of the scope of this document.
