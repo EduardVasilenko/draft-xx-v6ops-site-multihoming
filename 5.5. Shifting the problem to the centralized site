@@ -22,13 +22,14 @@ This tunnel-based solution may also be implemented as a scheme in which the cent
 
 The principal downside of the tunnel-based solution is not making use of the "local Internet breakout": users at the branch site are almost guaranteed to experience worse performance towards Internet destinations compared to solutions listed in sections 5.1-5.4, due to the traffic having to be backhauled to the central site first.
 
-In fact, despite the alleviating factors discussed above, shifting the problem to a different area of the network might not be considered a solution at all, because the central site would face the same fundamental challenges and it would ultimately have the same options for multihoming as discussed in sections 5.1-5.4. Enterprise WAN design in itself remains outside the scope of this document.
+In fact, despite the alleviating factors discussed above, shifting the problem to a different area of the network might not be considered a technical solution at all, because the central site would face the same fundamental challenges and it would ultimately have the same options for multihoming as discussed in sections 5.1-5.4. This is a non-technical solution for a small site.
+Enterprise WAN design in itself remains outside the scope of this document.
 
 Advantages:
--	
--	
--	
+- shifting the problem to a different place may help to solve it more efficiently	
+- easy to implement any traffic steering, including traffic symmetry requirement	
+- centralized Internet gateway is better for perimeter security
 Disadvantages:
--	
--	
--	
+- Looping the Internet traffic through the centralized site would increase latency, and additional links on the traffic path may contribute to jitter and packet loss.	
+- More bandwidth is needed for rented WAN links
+	
