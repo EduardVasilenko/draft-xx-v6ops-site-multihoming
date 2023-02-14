@@ -32,4 +32,4 @@ Advantages:
 Disadvantages:
 - Looping the Internet traffic through the centralized site would increase latency, and additional links on the traffic path may contribute to jitter and packet loss.	
 - More bandwidth is needed for rented WAN links
-	
+- The central site becomes a single point of failure for the Internet access of the entire organization
