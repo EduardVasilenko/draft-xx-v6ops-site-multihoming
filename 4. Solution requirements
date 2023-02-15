@@ -1,14 +1,14 @@
 1.	Site resiliency to an arbitrary number of carriers.
 2.	End-to-end connectivity wherever possible.
-3.	Possibility for internal communication using any prefixes distributed by local routers, irrespective of the connectivity to carriers.
-4.	Sub-second convergence on the site after the connectivity is lost to any particular carrier.
-5.	The potential complex topology of the site with many internal on-site hops (that needs many routers and links)
-6.	Access resources on the carrier's “subscriber-only services” that is permitted only for the address space distributed by the particular carrier.
-There may exist a need for the host to check DNS resolvers from all carriers to discover the restricted resource.
-A given host may need to choose the source address that would be accepted by the particular carrier. 
-7.	Possibility for traffic steering between different paths (including site internal and the Internet) based on bandwidth, cost, load, latency, packet loss, hop count, etc. (e.g. application traffic/path engineering)
-It is out of scope for this document to develop additional perimeter security; every system should assume a non-secure environment which is the case after the host’s frequent connections to the open Internet. 
-Different environemnts have diverse security policies, needs, and requirements that may be shaped by internal policy, regulatory compliance, or national security requirements, and as such, will not be discussed in detail in this document.
-Privacy is assumed by [Temporary addressing] and put out of the carrier resiliency design consideration.
-All solutions would have different cost advantages and disadvantages. The cost may greatly vary for different geographies, market segments, and the size of the organization but all should be driven by any needs and requirements set upon the organization by their respective governing bodies with input from the appropriate subject matter experts. 
-It is recognized that cost is often a determining factor in IT and networking decisions but is out of scope for this document.
+3.	Possibility for internal communication using any prefixes distributed by local routers, irrespective of the status of the connectivity to the carriers that distributed such prefixes.
+4.	Sub-second convergence of routing in the site after connectivity is lost to any particular carrier.
+5.	Support for sites with complex topologies, including multiple internal on-site hops requiring many routers and links.
+6.	Access to resources from the carrier's “subscriber-only services” that is permitted only when using the address space distributed by the particular carrier.
+There may exist a need for the host to check DNS resolvers from all carriers before it can even discover the restricted resource.
+A given host may thus need to choose the correct source address that would be accepted by the particular carrier. 
+7.	Possibility for traffic steering between different paths (including both internal to the site, and the Internet) based on bandwidth, cost, load, latency, packet loss, hop count, etc. (e.g. application traffic/path engineering) for both outbound and inbound packets.
+It is out of scope for this document to evaluate issues related to perimeter security; every system should assume an insecure environment, which is already the case since the host is establishing frequent connections to the open Internet.
+Different environments have diverse security policies, needs, and obligations that may be shaped by internal policy, regulatory compliance, or national security requirements, and as such will not be discussed in detail in this document.
+Privacy is furthermore assumed to be protected by [Temporary addressing] and is also kept outside of the carrier resiliency design consideration.
+All solutions to the problem statement in this document would have different cost advantages and disadvantages. The associated costs may greatly vary for different geographies, market segments, and organization sizes, but the choices should be ultimately driven by any needs and requirements set upon the organization by their respective governing bodies, with input from the appropriate subject matter experts.
+It is recognized that cost is often a determining factor in IT and networking decisions, but it is also considered out of scope for this document.
