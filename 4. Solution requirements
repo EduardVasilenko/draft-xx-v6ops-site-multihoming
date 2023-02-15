@@ -1,7 +1,7 @@
 1.	Site resiliency to an arbitrary number of carriers.
 2.	End-to-end connectivity wherever possible.
 3.	Possibility for internal communication using any prefixes distributed by local routers, irrespective of the status of the connectivity to the carriers that distributed such prefixes.
-4.	Sub-second convergence of routing in the site after connectivity is lost to any particular carrier.
+4.	Sub-second convergence for the prefix deprication on the site after connectivity is lost to any particular carrier.
 5.	Support for sites with complex topologies, including multiple internal on-site hops requiring many routers and links.
 6.	Access to resources from the carrier's “subscriber-only services” that is permitted only when using the address space distributed by the particular carrier.
 There may exist a need for the host to check DNS resolvers from all carriers before it can even discover the restricted resource.
