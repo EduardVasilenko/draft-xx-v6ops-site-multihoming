@@ -37,6 +37,7 @@ Disadvantages:
 - Looping the Internet traffic through the centralized site might increase latency, and additional links on the traffic path may contribute to jitter and packet loss.
 - More bandwidth is needed for rented WAN links
 - Side effects related to tunneling, such as encapsulation processing and overhead
+- Convergence time in case of underlay network failures may be affected by the need to re-establish the tunnels and routing neighborships of the overlay
 - The central site becomes a single point of failure for the Internet access of the entire organization
 - Some or all of the disadvantages listed in sections 5.1-5.4 apply, depending on the specific solution selected to solve the multi-homing issue at the central site. These may include end-to-end connectivity and traffic steering issues toward Internet destinations.
 
