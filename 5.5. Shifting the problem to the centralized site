@@ -2,7 +2,7 @@ Another possible approach is shifting the Internet access resiliency problem to 
 
 The reasoning behind this choice is based on several factors and commonly involves one or more of the following assumptions:
 
-1. Branch site Multi-Homing is mainly a matter of first-mile redundancy due to the increased difficulty of providing stable connectivity to remote sites compared to a large central site. Suppose the traffic can be made to traverse the first mile in an optimal environment (because the entire path is under the network administrator's control, at least at the network level). In that case, the relatively high-quality Internet circuits found at the central site can be managed using more traditional and resource-intensive techniques (for example, by significantly increasing capacity and carrier diversity, tuning routing advertisements, and using ECMP).
+1. Branch site Multi-Homing is mainly a matter of first mile redundancy due to the increased difficulty of providing stable connectivity to remote sites compared to a large central site. Suppose the traffic can be made to traverse the first mile in an optimal environment (because the entire path is under the network administrator's control, at least at the network level). In that case, the relatively high-quality Internet circuits found at the central site can be managed using more traditional and resource-intensive techniques (for example, by significantly increasing capacity and carrier diversity, tuning routing advertisements, and using ECMP).
 
 2. Obtaining enterprise-class connectivity, where the customer has the option to announce their own address space dynamically to the carriers, can be complex and cannot thus be done for every site.
 
@@ -18,7 +18,7 @@ It is typically much easier to arrange the resiliency over internal WAN links. T
 
 - "Return traffic path not guaranteed to mirror the outbound path": path symmetry in the more critical first mile can be guaranteed by the network administrator through configuring the network devices at the far end of the WAN to honor the original link choice of the incoming sessions in a stateful manner, or by applying the same deterministic forwarding algorithms on devices at both ends. Several vendors provide this functionality out of the box in certain products. Symmetry is thus guaranteed where it matters, i.e., where traffic must traverse links having vastly different characteristics and quality (it is not uncommon for remote sites to be served by a primary DSL/fiber link and a secondary, much more limited cellular link).
 
-The tunnel-based solution described in this section may also be implemented as a scheme in which the central site is not owned by the organization at all and is instead part of a service offered by a tunnel broker somewhere on the Internet. Such a choice can be appealing due to factors such as outsourcing of operational burden and the possibility of superior performance due to the broker having a globally deployed and fine-tuned network of "hubs," to the closest of which each site can then connect to.
+The tunnel-based solution described in this section may also be implemented as a scheme in which the central site is not owned by the organization at all and is instead part of a service offered by a tunnel broker somewhere on the Internet. Such a choice can be appealing due to factors such as outsourcing of operational burden and the possibility of superior performance due to the broker having a globally distributed and fine-tuned network of "hubs," to the closest of which each site can then connect to.
 Another advantage of having control over the path crossing the first mile of the branch site lies in the possibility of applying error-correcting algorithms to the traffic; several vendors offer this functionality which, although proprietary, can be made to work by placing compatible devices at the branch edge and the central site, usually terminating the tunnels comprising the overlay. Such techniques typically include forward error correction, compression, packet duplication, and deduplication across multiple low-quality links, with the goal to prevent or lessen packet loss across the overlay. These techniques, however, cannot improve other metrics such as latency.
 
 The principal downside of the tunnel-based solution is not making use of the "local Internet breakout": users at the branch site are almost guaranteed to experience worse performance towards Internet destinations compared to solutions listed in sections 5.1-5.4 due to the traffic having to be backhauled to the central site first.
@@ -28,16 +28,16 @@ In fact, despite the alleviating factors discussed above, shifting the problem t
 Enterprise WAN design in itself remains outside the scope of this document.
 
 Advantages:
-- Shifting the problem to a different location may help to solve it more efficiently	
-- Traffic steering is easy to implement, including traffic symmetry requirements
-- A centralized Internet gateway simplifies perimeter security
-- Possibility of applying WAN optimization techniques to the first section of the path toward the Internet
+- Shifting the problem to a different location may help solve it more efficiently,
+- Traffic steering is easy to implement, including traffic symmetry requirements,
+- A centralized Internet gateway simplifies perimeter security,
+- Possibility of applying WAN optimization techniques to the first section of the path toward the Internet.
 
 Disadvantages:
-- Looping the Internet traffic through the centralized site might increase latency, and additional links on the traffic path may contribute to jitter and packet loss.
-- More bandwidth is needed for rented WAN links
-- Side effects related to tunneling, such as encapsulation processing and overhead
-- Convergence time in case of underlay network failures may be affected by the need to re-establish the tunnels and routing neighborships of the overlay
-- The central site becomes a single point of failure for the Internet access of the entire organization
+- Looping the Internet traffic through the centralized site might increase latency, and additional links on the traffic path may contribute to jitter and packet loss,
+- More bandwidth is needed for rented WAN links,
+- Side effects related to tunneling, such as encapsulation processing and overhead,
+- Convergence time in case of underlay network failures may be affected by the need to re-establish the tunnels and routing neighborships of the overlay,
+- The central site becomes a single point of failure for the Internet access of the entire organization,
 - Some or all of the disadvantages listed in sections 5.1-5.4 apply, depending on the specific solution selected to solve the multi-homing issue at the central site. These may include end-to-end connectivity and traffic steering issues toward Internet destinations.
 
