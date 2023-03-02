@@ -13,13 +13,13 @@ Advantages:
 -	No need for official address space, as the ULA prefix is pseudo-randomly self-generated,
 -	Easy to implement,
 -	Equivalent in practice to current IPv4 carrier resiliency techniques,
--	NAT may be a normative requirement by itself (this is highly questionable, but nonetheless brought forward in many discussions),
+-	NAT may be a normative requirement in itself (this is highly questionable, but nonetheless brought forward in many discussions),
 -	Support for sites with complex topologies,
 -	Potential for traffic distribution policy between different carriers.
 Disadvantages:
 -	It is challenging to automate ULA prioritization above IPv4 on hosts,
 -	NAT breaks some applications with address referrals at the application level,
--	Custom distribution policies needed for access to filtered resource (“subscriber-only services”),
+-	Custom distribution policies needed for access to filtered resources (“subscriber-only services”),
 -	Some additional solutions are needed (STUN, ALG),
 -	Session initiation from the outside is blocked in practice (needs complex configuration),
 -	NAT implies the requirement to keep logs for compliance and troubleshooting,
