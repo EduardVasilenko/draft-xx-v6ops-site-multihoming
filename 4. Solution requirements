@@ -11,4 +11,4 @@ It is out of scope for this document to evaluate issues related to perimeter sec
 Different environments have diverse security policies, needs, and obligations that may be shaped by internal policy, regulatory compliance, or national security requirements, and as such will not be discussed in detail in this document.
 Privacy is furthermore assumed to be protected by [Temporary addressing] and is also kept outside of the carrier resiliency design consideration.
 All solutions to the problem statement in this document would have different cost advantages and disadvantages. The associated costs may greatly vary for different geographies, market segments, and organization sizes, but the choices should be ultimately driven by any needs and requirements set upon the organization by their respective governing bodies, with input from the appropriate subject matter experts.
-It is recognized that cost is often a determining factor in IT and networking decisions, but it is also considered out of scope for this document.
+It is recognized that cost is often a determining factor in IT and networking decisions, but it is also considered out of the scope for this document.
