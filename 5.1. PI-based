@@ -24,6 +24,6 @@ Disadvantages:
 -	In case of provider failure a prefix may not be correctly deprecated from global routing, and this could lead to complex error scenarios and downtime,
 -	The need to pay and liaise with a RIR or LIR for the PI address space,
 -	Needs carriers to accept PI prefix advertisements,
--   Carriers typically charge significantly more for such type of attachment; often SD-WAN contracts are required instead of business DSL contracts,
+- Carriers typically charge significantly more for such type of attachment; often SD-WAN contracts are required instead of business DSL contracts,
 -	The return traffic path is not guaranteed to mirror the outbound path,
 -	Bloats the Internet routing table.
