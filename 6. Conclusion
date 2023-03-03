@@ -23,8 +23,8 @@ Theoretically, from a purely technical point of view, the solutions in section 5
 
 For many network owners, the main deciding factor may be the desire to have end-to-end connectivity, as it is the most notable advantage of deploying IPv6 compared to IPv4. This may be especially important when managing resources that need to be exposed to the Internet.
 If this is needed then PI or PA–based solutions are applicable, and network owners must undertake some additional steps to implement them:
-•	obtain a PI prefix from a RIR or LIR,
-•	pay a premium for the advertisement of the PI prefixes through the carriers (as these often impose different tariffs for such an attachment circuit).
+- obtain a PI prefix from a RIR or LIR,
+- pay a premium for the advertisement of the PI prefixes through the carriers (as these often impose different tariffs for such an attachment circuit).
 If both of these challenges are deemed acceptable then the PI-based solution is preferable: simple, reliable, and scalable. The universal adoption of PI by companies of all sizes would create a burden for Internet routing, but this issue is unlikely to be considered a priority by an organization whose decision-making process is already constrained by many other factors.
 If at least one of the aforementioned challenges is not acceptable then PA may be the solution of choice, even with all the restrictions and complexities discussed in section 5.2. A notable exception to this is if complex topology support is a requirement and the site is served by a mobile carrier (due to the unavailability of prefixes larger than /64 on such connections).
 It may also be the case that end-to-end connectivity is not a necessity, and may even be undesired. Here, the ULA+NPT solution (discussed in section 5.3) satisfies a greater amount of requirements in the majority of situations, apart from cases where NAT66 is a strict (non-technical) requirement or the site has a combination of complex topology and mobile connectivity (problematic due to the small assignments on the WAN side and the 1:1 mechanism of NPT.)
