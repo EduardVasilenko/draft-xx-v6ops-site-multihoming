@@ -1,0 +1,13 @@
+[IAB report] D. Meyer, L. Zhang, K. Fall, "Report from the IAB Workshop on Routing and Addressing", RFC 4984, DOI 10.17487/RFC4984, September 2007, <https://www.rfc-editor.org/info/rfc4984>.
+[Shim6] E. Nordmark, M. Bagnulo, "Shim6: Level 3 Multihoming Shim Protocol for IPv6", RFC 5533, DOI 10.17487/RFC5533, June 2009, <https://www.rfc-editor.org/info/rfc5533>.
+[STUN] M. Petit-Huguenin, G. Salgueiro, J. Rosenberg, D. Wing, R. Mahy, P. Matthews, "Session Traversal Utilities for NAT (STUN)", RFC 8489, DOI 10.17487/RFC8489, February 2020, <https://www.rfc-editor.org/info/rfc8489>.
+[MHMP] O. Troan, D. Miles, S. Matsushima, T. Okimoto, D. Wing, "IPv6 Multihoming without Network Address Translation", RFC 7157, DOI 10.17487/RFC7157, March 2014, <https://www.rfc-editor.org/info/rfc7157>.
+[Route Preferences] R. Draves, D. Thaler, "Default Router Preferences and More-Specific Routes", RFC 4191, DOI 10.17487/RFC4191, November 2005, <https://www.rfc-editor.org/info/rfc4191>.
+[Policy by DHCP] A. Matsumoto, T. Fujisaki, T. Chown, "Distributing Address Selection Policy Using DHCPv6", RFC 7078 DOI 10.17487/RFC7078, January 2014, <https://www.rfc-editor.org/info/rfc7078>.
+[DNS Options] J. Jeong, S. Park, L. Beloeil, S. Madanapalli, "IPv6 Router Advertisement Options for DNS Configuration", RFC 8106 DOI 10.17487/RFC8106, March 2017, <https://www.rfc-editor.org/info/rfc8106>.
+[Conditional PIO] J. Linkova, M. Stucchi, "Using Conditional Router Advertisements for Enterprise Multihoming", RFC 8475 DOI 10.17487/RFC8475, October 2018, <https://www.rfc-editor.org/info/rfc8475>.
+[Provisioning domains] P. Pfister, E. Vyncke, T. Pauly, D. Schinazi, W. Shao, "Discovering Provisioning Domain Names and Data", RFC 8801 DOI 10.17487/RFC8801, July 2020, <https://www.rfc-editor.org/info/rfc8801>.
+[RFC8415] T. Mrugalski, M. Siodelski, B. Volz, A. Yourtchenko, M. Richardson, S. Jiang, T. Lemon, T. Winters, " Dynamic Host Configuration Protocol for IPv6 (DHCPv6)", RFC 8415 DOI 10.17487/RFC8415, November 2018, <https://www.rfc-editor.org/info/rfc8415>.
+[Temporary addressing] F. Gont, S. Krishnan, T. Narten, R. Draves, "Temporary Address Extensions for Stateless Address Autoconfiguration in IPv6", RFC 8981 DOI 10.17487/RFC8981, February 2021, <https://www.rfc-editor.org/info/rfc8981>.
+[RFC 6879] S. Jiang, B. Liu, B. Carpenter, "IPv6 Enterprise Network Renumbering Scenarios,    Considerations, and Methods", RFC 6879 DOI 10.17487/RFC6879, February 2013, <https://www.rfc-editor.org/info/rfc6879>.
+[nftables NAT66] Marco Cilloni, "NAT66: The good, the bad, the ugly", <https://blog.apnic.net/2018/02/02/nat66-good-bad-ugly>.
