@@ -24,4 +24,4 @@ Disadvantages:
 -	NAT implies the requirement to keep logs for compliance and troubleshooting,
 -	Expensive, due to the higher costs of stateful processing,
 -	May hinder overall IPv6 adoption,
--	For applications, the drawbacks are similar to ULA with NPT (section 5.3).
+-	For applications, the drawbacks are similar to ULA with NPTv6 (section 5.3).
