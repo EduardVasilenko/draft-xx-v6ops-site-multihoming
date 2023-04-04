@@ -18,9 +18,15 @@ In fact, despite the alleviating factors discussed above, shifting the problem t
 Enterprise WAN design in itself remains outside the scope of this document.
 Advantages:
 - Shifting the problem to a different location may help solve it more efficiently,
-- Traffic steering is easy to implement, including traffic symmetry requirements,
+- The simplest solution for the small site,
+- Supported on CE products (Wireguard),
+- No need to renumber, hence no issues with prefix deprecation,
+- No need for special support on hosts,
+- Traffic steering is easy to implement, including traffic symmetry requirements or active/passive failover,
 - A centralized Internet gateway simplifies perimeter security,
-- Possibility of applying WAN optimization techniques to the first section of the path toward the Internet.
+- Possibility of applying WAN optimization techniques to the first section of the path toward the Internet,
+- Multiple free or paid tunnel brokers exist with different SLAs,
+- Avoid unnecessarily polluting the global routing table, and may also get better AS paths because of the aggregations compared to using a PI.
 Disadvantages:
 - Looping the Internet traffic through the centralized site might increase latency, and additional links on the traffic path may contribute to jitter and packet loss,
 - More bandwidth is needed for rented WAN links,
