@@ -13,3 +13,4 @@
 [multi6] J. Abley, B. Black, V. Gill, "Goals for IPv6 Site-Multihoming Architectures", RFC 3582 DOI 10.17487/RFC3582, August 2003, <https://www.rfc-editor.org/info/rfc3582>.
 [flash renumbering] F. Gont, J. Zorz, R. Patterson, “Improving the Robustness of Stateless Address Autoconfiguration (SLAAC) to Flash Renumbering Events”, draft-ietf-6man-slaac-renum-04 (work in progress), February 2023.
 [nftables NAT66] Marco Cilloni, "NAT66: The good, the bad, the ugly", <https://blog.apnic.net/2018/02/02/nat66-good-bad-ugly>.
+[RFC1919] M. Chatel, "Classical versus Transparent IP Proxies", RFC 1919 DOI 10.17487/RFC1919, March 1996, <https://www.rfc-editor.org/info/rfc1919>.
