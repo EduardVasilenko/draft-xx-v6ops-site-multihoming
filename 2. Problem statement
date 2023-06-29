@@ -33,7 +33,7 @@ This solution is primarily based on the interaction of [ND] and [SASA] and will 
 4. Static ULA address space for the site with NAT66 translation. In this case NAT66 is combined with Unique Local Addresses (ULA). The solution is discussed in section 5.4.
 5. Shifting Internet access resilience to a central site. A branch site is granted redundant connectivity to a central hub location where the aspects related to
 resilient Internet connectivity are handled. The methods is discussed in section 5.5.
-6. xx, discussed in section 5.6.
+6. Relying on an application proxy to handle path decisions. In this case, internal hosts are only required to send traffic to a central device in the site, which then independently selects which carrier to use to reach the Internet. This method is discussed in section 5.6.
  
 The IETF consensus to preserve end-to-end connectivity does not favor the general acceptance of solutions 3 and 4, yet they are reported in this document because they offer
 a degree of support of the requirements listed in section 4.
