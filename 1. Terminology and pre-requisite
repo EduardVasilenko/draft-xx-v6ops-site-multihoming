@@ -1,9 +1,9 @@
 Terminology is inherited from [ND] and [SLAAC]. Additional terms:
 RIR (Regional Internet Registry):  an organization that manages Internet numbering resources (such as IP addresses and autonomous system (AS) numbers) within a geographical region of the world.
 LIR (Local Internet Registry):  an organization (usually a carrier or an Enterprise/Academic institution) that receives its allocation of IP addresses from the Regional Internet Registry (RIR), then assigns parts of that allocation to its customers.
-PA (provider-assigned or provider-aggregatable) address space: a block of IP addresses assigned to the end customer by a carrier or other owner that received it inside a bigger block from a RIR or LIR. The principal characteristic of the PA address block is that it is aggregated in the bigger block (not announced separately) in the Internet routing tables.
+PA (provider-assigned or provider-aggregatable) address space: a block of IP addresses assigned to the end customer by a carrier or other owner that received it inside a bigger block from an RIR or LIR. The principal characteristic of the PA address block is that it is aggregated in the bigger block (not announced separately) in the Internet routing tables.
 PI (provider-independent) address space:  a block of IP addresses assigned by RIR or LIR to the end customer with the possibility for independent announcements in the Internet routing tables.
 DHCP-PD:  IPv6 Prefix delegation by DHCP from the carrier to the client to be used for numbering throughout the client site (As currently defined by [DHCPv6] Section 6.3).
 End-to-end connectivity: The possibility to initiate the connection from any direction, including the case of complex protocols with many logically related sessions.
-ALG (Application-level gateway or Application-layer gateway): a component which monitors the data payload of connections to discover and fix application-level referrals (embedded IP addresses).
+ALG (Application-level gateway or Application-layer gateway): a component that monitors the data payload of connections to discover and fix application-level referrals (embedded IP addresses).
 Subscriber-only services:  The resource that is filtered to the public Internet and available only for some portion of the Internet, typically only for subscribers of the particular carrier.
