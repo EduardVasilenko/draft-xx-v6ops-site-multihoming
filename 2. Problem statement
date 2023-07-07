@@ -1,6 +1,6 @@
 Always-on connectivity is a key requirement for the vast majority of businesses. [IAB report] predicts that there “might be as many as 10 million multihomed sites by 2050”. Unfortunately, several issues may affect the connection of a business to its upstream service provider. For example, the carrier’s network, the network gateway, or the first-mile infrastructure may experience issues. It is especially true now after many recent examples of massive carrier outages.
 A redundant connection to the carrier is then the norm for business.
-A simple topology that showcases this key requirement is shown in figure 1. Note that the topology could be more complex as shown, for example, in figure 3 [MHMP Enterprise].
+A simple topology that showcases this key requirement is shown in Figure 1. Note that the topology could be more complex as shown, for example, in Figure 3 [MHMP Enterprise].
                                +------+      _________
                                |      |     /         \
                            +---| CPE1 |----/  Carrier  \
@@ -18,22 +18,16 @@ A simple topology that showcases this key requirement is shown in figure 1. Note
    Figure 1: The basic Carrier Resiliency topology
 Without entering too much into details, resilience is generally achieved by employing redundant elements. Two Customer Premises Equipment (CPE) systems are usually employed. Very often, each CPE connects the business to a different carrier. In some cases, a CPE may even connect to two different carriers, to achieve a higher level of protection against network failures.
 It is very desirable to have paths with diversity. Unfortunately, it is not always possible for the enterprise to understand what exactly is shared between paths offered by different carriers. The duct the fibers run through may even be shared in many cases, with the risk of both strands being damaged at the same time. Let’s assume for the discussion in this document that the paths available for the site to reach the Internet are sufficiently diverse.
-In literature, a topology such as that shown in figure 1 based on IPv6 connectivity is often referred to as Multi-Home, Multi-Prefix (MHMP). The name implies that a network is multi-homed to different carriers, receiving from them different network prefixes.
+In literature, a topology such as that shown in Figure 1 based on IPv6 connectivity is often referred to as Multi-Home, Multi-Prefix (MHMP). The name implies that a network is multi-homed to different carriers, receiving from them different network prefixes.
 The problem of providing network protection with IPv6 was thoroughly discussed in [Local Protection]. This document is an overview of the most commonly used methods to facilitate the desired protection in modern IPv6 networks, along with a discussion of the advantages and disadvantages of each method.
 In IPv4 environments, such a scenario is implemented through independent NAT translation on every CPE to the carrier in combination with private address space on-site. [Local Protection] has a good list of benefits. The solution was initially adopted due to the shortage of globally-reachable address space. Later, security and carrier resiliency were identified as additional benefits. Due to the prevalence of a solution based around address translation in IPv4, demands are often voiced for such a mechanism in IPv6 as well, running the risk of being chosen by network designers without evaluating alternative options.
 [Local Protection] has a list of IPv6 tools that replace all functionality of the NAT solution except address conservation, which is not a necessity in IPv6. Time has shown that all IPv6 tools have been accepted as valid replacements except IPv6 “multi-homing and renumbering”. Discussions about this last problem are ongoing – see [Multi-Homing] [MHMP Enterprise] [MHMP] [flash renumbering].
-
 This document considers 6 solutions with current operational deployment (more may be added in future versions of the draft):
-1. Static PI address space for the site, routed by multiple carriers. This method allows to allocate Provider Independent (PI) addresses on-site 
-while routing announcements are propagated by carriers on behalf of the client. It will be discussed in section 5.1.
-2. Dynamic PA addresses distribution and withdrawal from carriers. An [IPv6] host gets different Provider Aggregatable (PA) addresses for its interfaces, 
-possibly from different carriers. It is the host's responsibility to properly choose the combination of a source address and the relevant next hop. 
-This solution is primarily based on the interaction of [ND] and [SASA] and will be discussed in section 5.2.
+1. Static PI address space for the site, routed by multiple carriers. This method allows the allocation of Provider Independent (PI) addresses on-site while routing announcements are propagated by carriers on behalf of the client. It will be discussed in section 5.1.
+2. Dynamic PA addresses distribution and withdrawal from carriers. An [IPv6] host gets different Provider Aggregatable (PA) addresses for its interfaces, possibly from different carriers. It is the host's responsibility to properly choose the combination of a source address and the relevant next hop. This solution is primarily based on the interaction of [ND] and [SASA] and will be discussed in section 5.2.
 3. Static ULA address space for the site with NPTv6 translation. [NPTv6] is adopted in combination with Unique Local Addresses (ULA). This method is discussed in section 5.3.
 4. Static ULA address space for the site with NAT66 translation. In this case NAT66 is combined with Unique Local Addresses (ULA). The solution is discussed in section 5.4.
 5. Shifting Internet access resilience to a central site. A branch site is granted redundant connectivity to a central hub location where the aspects related to
 resilient Internet connectivity are handled. The methods is discussed in section 5.5.
 6. Relying on an application proxy to handle path decisions. In this case, internal hosts are only required to send traffic to a central device in the site, which then independently selects which carrier to use to reach the Internet. This method is discussed in section 5.6.
- 
-The IETF consensus to preserve end-to-end connectivity does not favor the general acceptance of solutions 3 and 4, yet they are reported in this document because they offer
-a degree of support of the requirements listed in section 4.
+The IETF consensus to preserve end-to-end connectivity does not favor the general acceptance of solutions 3 and 4, yet they are reported in this document because they offer a degree of support of the requirements listed in section 4.
