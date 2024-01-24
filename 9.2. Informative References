@@ -11,8 +11,9 @@
 [Temporary addressing] F. Gont, S. Krishnan, T. Narten, R. Draves, "Temporary Address Extensions for Stateless Address Autoconfiguration in IPv6", RFC 8981 DOI 10.17487/RFC8981, February 2021, <https://www.rfc-editor.org/info/rfc8981>.
 [6renum] S. Jiang, B. Liu, B. Carpenter, "IPv6 Enterprise Network Renumbering Scenarios, Considerations, and Methods", RFC 6879 DOI 10.17487/RFC6879, February 2013, <https://www.rfc-editor.org/info/rfc6879>.
 [multi6] J. Abley, B. Black, V. Gill, "Goals for IPv6 Site-Multihoming Architectures", RFC 3582 DOI 10.17487/RFC3582, August 2003, <https://www.rfc-editor.org/info/rfc3582>.
-[flash renumbering] F. Gont, J. Zorz, R. Patterson, “Improving the Robustness of Stateless Address Autoconfiguration (SLAAC) to Flash Renumbering Events”, draft-ietf-6man-slaac-renum-04 (work in progress), February 2023.
+[flash renumbering] F. Gont, J. Zorz, R. Patterson, “Improving the Robustness of Stateless Address Autoconfiguration (SLAAC) to Flash Renumbering Events”, draft-ietf-6man-slaac-renum-07 (work in progress), May 2023.
 [nftables NAT66] Marco Cilloni, "NAT66: The good, the bad, the ugly", <https://blog.apnic.net/2018/02/02/nat66-good-bad-ugly>.
 [IP Proxy] M. Chatel, "Classical versus Transparent IP Proxies", RFC 1919 DOI 10.17487/RFC1919, March 1996, <https://www.rfc-editor.org/info/rfc1919>.
 [MPTCP] A. Ford, C. Raiciu, M. Handley, O. Bonaventure, C. Paasch, "TCP Extensions for Multipath Operation with Multiple Addresses", RFC 8684 DOI 10.17487/RFC8684, March 2020, <https://www.rfc-editor.org/info/rfc8684>.
 [MPQUIC] Y. Liu, Y. Ma, Q. De Coninck, O. Bonaventure, C. Huitema, M. Kuehlewind, “Multipath Extension for QUIC”, draft-ietf-quic-multipath-05 (work in progress), July 2023.
+[PDperDevice] L. Colitti, J. Linkova, X. Ma, "Using DHCPv6-PD to Allocate Unique IPv6 Prefix per Client in Large Broadcast Networks", draft-ietf-v6ops-dhcp-pd-per-device-05 (work in progress), November 2023.
