@@ -16,7 +16,7 @@
 [IP Proxy] Chatel, M., "Classical versus Transparent IP Proxies", RFC 1919, DOI 10.17487/RFC1919, March 1996, <https://www.rfc-editor.org/info/rfc1919>.
 [HTTP] Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke, Ed., "HTTP Semantics", STD 97, RFC 9110, DOI 10.17487/RFC9110, June 2022, <https://www.rfc-editor.org/info/rfc9110>.
 [SOCKS] Leech, M., Ganis, M., Lee, Y., Kuris, R., Koblas, D., and L. Jones, "SOCKS Protocol Version 5", RFC 1928, DOI 10.17487/RFC1928, March 1996, <https://www.rfc-editor.org/info/rfc1928>.
-[MASQUE] Pauly, T., Ed., Schinazi, D., Chernyakhovsky, A., Kühlewind, M., and M. Westerlund, "Proxying IP in HTTP", RFC 9484, DOI 10.17487/RFC9484, October 2023, <https://www.rfc-editor.org/info/rfc9484>.
+[MASQUE] Pauly, T., Ed., Schinazi, D., Chernyakhovsky, A., Kuhlewind, M., and M. Westerlund, "Proxying IP in HTTP", RFC 9484, DOI 10.17487/RFC9484, October 2023, <https://www.rfc-editor.org/info/rfc9484>.
 [MPTCP] A. Ford, C. Raiciu, M. Handley, O. Bonaventure, C. Paasch, "TCP Extensions for Multipath Operation with Multiple Addresses", RFC 8684 DOI 10.17487/RFC8684, March 2020, <https://www.rfc-editor.org/info/rfc8684>.
 [MPQUIC] Y. Liu, Y. Ma, Q. De Coninck, O. Bonaventure, C. Huitema, M. Kuehlewind, “Multipath Extension for QUIC”, draft-ietf-quic-multipath-06 (work in progress), July 2023.
 [PDperDevice] L. Colitti, J. Linkova, X. Ma, "Using DHCPv6-PD to Allocate Unique IPv6 Prefix per Client in Large Broadcast Networks", draft-ietf-v6ops-dhcp-pd-per-device-06 (work in progress), November 2023.
