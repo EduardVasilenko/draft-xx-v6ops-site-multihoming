@@ -30,7 +30,10 @@ Question 5: If the answer to the previous is “No”, which method do you emplo
 5.4. ULA/GUA intra-site with NPTv6 at the border: 10.0%
 5.5. ULA/GUA intra-site with NAT66 at the border: 10.0%
 5.6. Other: 10.0%
-5.6.1 PA addressing (GUA) with address from CPE. ULA intra-site. NAT66 at border for mismatches: 10.0%
+
+The field "Other" allows to specify a solution different from the ones previously listed. 
+At present, the configurations listed are:
+5.6.1 PA addressing (GUA) with address from CPE. ULA intra-site. NAT66 at border for mismatches.
 
 Question 6: Which method do you employ for supporting IPv4 multi-homing (if any)?
 15 responses:
