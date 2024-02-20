@@ -1,41 +1,41 @@
 A survey was proposed to collect information on multi-homing solutions adopted in field deployment.
-As of IETF 118 (Prague, November 4-10 2023), 17 respondents provided answers to the following questions.
+As of February 20, 2024, 22 respondents provided answers to the following questions.
 
 Question 1: How many CPEs are connected to ISPs on the average site?
-15 responses:
-1.1. One CPE: 6.7%
-1.2. Two CPEs: 80.0%
-1.3. More than two: 13.3%
+17 responses:
+1.1. One CPE: 2 answers (11.8%)
+1.2. Two CPEs: 13 answers (76.5%)
+1.3. More than two: 2 answers (11.8%)
 
 Question 2: How many uplinks are configured per CPEs/CEs in your average site?
-15 responses:
-2.1. One (every CPE has just 1 uplink toward a certain ISP): 53.3%
-2.2. Two or more (a CPE is connected at least with 2 different ISPs): 46.7%
+17 responses:
+2.1. One (every CPE has just 1 uplink toward a certain ISP): 8 answers (47.1%)
+2.2. Two or more (a CPE is connected at least with 2 different ISPs): 9 answers (52.9%)
 
 Question 3: Which configuration do you support?
-14 responses:
-3.1. Active/active: 78.6%
-3.2. Active/standby: 21.4%
+16 responses:
+3.1. Active/active: 13 answers (81.3%)
+3.2. Active/standby: 3 answers (18.8%)
 
 Question 4: Do your CPEs/CEs implement VRRP or any other dynamic exchange of redundancy control information?
-15 responses:
-4.1. Yes: 53.3%
-4.2. No: 46.7%
+17 responses:
+4.1. Yes: 9 answers (52.9%)
+4.2. No: 8 answers (47.1%)
 
 Question 5: If the answer to the previous is “No”, which method do you employ for supporting IPv6 multi-homing?
-10 responses:
-5.1. PI addressing: 40.0%
-5.2. PA addressing (GUA), each ISP assigns a prefix to every CPE/CE: 30.0%
-5.3. ULA/GUA intra-site with ALG at the border: 0.0%
-5.4. ULA/GUA intra-site with NPTv6 at the border: 10.0%
-5.5. ULA/GUA intra-site with NAT66 at the border: 10.0%
-5.6. Other: 10.0%
+12 responses:
+5.1. PI addressing: 5 answers (41.7%)
+5.2. PA addressing (GUA), each ISP assigns a prefix to every CPE/CE: 4 answers (33.3%)
+5.3. ULA/GUA intra-site with ALG at the border: 0 answers (0.0%)
+5.4. ULA/GUA intra-site with NPTv6 at the border: 1 answer (8.3%)
+5.5. ULA/GUA intra-site with NAT66 at the border: 1 answer (8.3%)
+5.6. Other: 1 answer (8.3%)
 
-The field "Other" allows to specify a solution different from the ones previously listed. 
+The field "Other" allows one to specify a solution different from the ones previously listed. 
 At present, the configurations listed are:
-5.6.1 PA addressing (GUA) with address from CPE. ULA intra-site. NAT66 at border for mismatches.
+5.6.1 PA addressing (GUA) with an address from CPE. ULA intra-site. NAT66 at the border for mismatches.
 
 Question 6: Which method do you employ for supporting IPv4 multi-homing (if any)?
-15 responses:
-6.1. Public Addressing: 53.3%
-6.2. NAT44: 46.7%
+17 responses:
+6.1. Public Addressing: 9 answers (52.9%)
+6.2. NAT44: 8 answers (47.1%)
