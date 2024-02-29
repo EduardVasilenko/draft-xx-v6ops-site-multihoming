@@ -26,4 +26,4 @@ Disadvantages:
 -	Session initiation from the outside is practical only in cases where the carrier prefix is stable or DNS records are dynamically updated,
 -	Currently limited to one subnet per site in mobile environments,
 -	May hinder overall IPv6 adoption as IPv6 with NPTv6 loses the end-to-end connectivity advantage,
--	For applications, the drawbacks are similar to ULA with NAT66 (section 5.4).
+-	For applications, the drawbacks are similar to ULA with NAT66 (section 5.5).
